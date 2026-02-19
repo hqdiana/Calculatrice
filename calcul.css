@@ -1,0 +1,24 @@
+.calcContainer {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height:200px;
+    border: 2px solid red;
+}
+
+hr {
+    width: 120px;
+}
+
+button {
+    width: 30px;
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 5px;
+}
+
+.row5 button{
+    width: 41.5px;
+}
