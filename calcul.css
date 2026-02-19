@@ -1,15 +1,26 @@
 .calcContainer {
     display:flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    width: 150px;
-    height:200px;
-    border: 2px solid red;
+    width: 200px;
+    height:250px;
+    border: 2px solid rgb(185, 201, 172);
+    border-radius: 30px;
+}
+
+.result {
+    position: inherit;
+    text-align: right;
+    justify-content: end;
+    color: rgb(158, 179, 140);
+    padding:0 32px;
+    font-size: 0.8rem;
 }
 
 hr {
-    width: 120px;
+    width: 130px;
+    margin-bottom: 10px;
+    color: rgb(244, 255, 235);
 }
 
 button {
@@ -17,8 +28,19 @@ button {
     text-align: center;
     font-size: 0.8rem;
     padding: 5px;
+    margin-bottom: 2px;
+    background-color: transparent;
+    border: 1px solid  rgb(158, 179, 140);
+    color: rgb(255, 200, 83);
+    border-radius: 10px;
+    cursor: pointer;
 }
 
-.row5 button{
-    width: 41.5px;
+.zero{
+    width: 65px;
 }
+
+.row {
+    margin: 0 auto;
+}
+
