@@ -3,9 +3,19 @@
     flex-direction: column;
     justify-content: center;
     width: 200px;
-    height:250px;
+    height:280px;
     border: 2px solid rgb(185, 201, 172);
     border-radius: 30px;
+    margin: 15% auto;
+}
+
+.pageTitle {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: -20px;
+    color: rgb(158, 179, 140);
+    font-family: "Sour Gummy", sans-serif;
 }
 
 .result {
@@ -13,7 +23,7 @@
     text-align: right;
     justify-content: end;
     color: rgb(158, 179, 140);
-    padding:0 32px;
+    padding:0 35px;
     font-size: 0.8rem;
 }
 
