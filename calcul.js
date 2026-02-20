@@ -46,6 +46,19 @@ function operation() {
             document.querySelector('.result').innerHTML = currentNumber;
         })
     }
+
+// add listener to negate button 
+    negate.addEventListener('click', function() {
+        if (currentNumber === '') {
+            currentNumber = '-';
+            document.querySelector('.result').innerHTML = currentNumber;
+        } else if (currentNumber.startsWith('-')) {
+            currentNumber = currentNumber.slice(1);
+            document.querySelector('.result').innerHTML = currentNumber;
+        } else currentNumber = '-' + currentNumber;
+        document.querySelector('.result').innerHTML = currentNumber;
+    })
+
 // loop through each operator button to see which one has been clicked
     for (let i = 0; i < operators.length; i++) {
         operators[i].addEventListener('click', function(e) {
@@ -62,7 +75,6 @@ function operation() {
             }
         })
     }
-
 
 
 // listener on = button to convert strings to number and effectuate calculation
