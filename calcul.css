@@ -1,21 +1,30 @@
+body {
+    background-color: #bdceaf;
+}
+
 .calcContainer {
     display:flex;
     flex-direction: column;
     justify-content: center;
     width: 200px;
     height:280px;
-    border: 2px solid rgb(185, 201, 172);
+    border: 2px solid rgb(169, 184, 157);
     border-radius: 30px;
     margin: 15% auto;
+    background-image: url(/bg.png);
+    box-shadow: 8px 4px 1px #f7c36f,
+    10px 6px 4px #818f75;
 }
 
 .pageTitle {
-    font-size: 1rem;
+    font-size: 0.8rem;
     text-align: center;
     margin-bottom: 30px;
-    margin-top: -20px;
-    color: rgb(158, 179, 140);
+    margin-top: -17px;
+    color: #e48d1c;
     font-family: "Sour Gummy", sans-serif;
+    letter-spacing: 2px;
+
 }
 
 .result {
@@ -23,14 +32,16 @@
     text-align: right;
     justify-content: end;
     color: rgb(158, 179, 140);
-    padding:0 35px;
+    padding:0 40px;
+    margin-top: 30px;
     font-size: 0.8rem;
 }
 
 hr {
-    width: 130px;
+    width: 120px;
     margin-bottom: 10px;
-    color: rgb(244, 255, 235);
+    color: #ffc76d;
+    opacity: 0.4;
 }
 
 button {
@@ -39,11 +50,21 @@ button {
     font-size: 0.8rem;
     padding: 5px;
     margin-bottom: 2px;
-    background-color: transparent;
-    border: 1px solid  rgb(158, 179, 140);
-    color: rgb(255, 200, 83);
+    background-color: rgb(237, 255, 220);
+    border: 1px solid  rgba(158, 179, 140, 0.308);
+    color: #ffb338;
     border-radius: 10px;
     cursor: pointer;
+    font-family: "Sour Gummy", sans-serif;
+    transition: 0.3s ease;
+    box-shadow: 1px 1px 1px rgb(158, 179, 140);
+}
+
+button:hover {
+    background-color: #ffc76d;
+    color:#fff;
+    border:1px solid rgba(158, 179, 140, 0.308);
+    box-shadow: 1px 1px 1px transparent;
 }
 
 .zero{
