@@ -21,5 +21,21 @@ function operation() {
             document.querySelector('.result').innerHTML = currentNumber;
         })
     }
+    const operators = document.querySelectorAll('.operator');
 
+    for (let i = 0; i < operators.length; i++) {
+        operators[i].addEventListener('click', function(e) {
+            let value = e.target.innerHTML;
+
+            if (currentNumber === '' && operator != null) {
+                operator = value;
+                document.querySelector('.result').innerHTML = previousNumber + " " + operator;
+            } else {
+                previousNumber = currentNumber;
+                currentNumber = '';
+                operator = value;
+                document.querySelector('.result').innerHTML = previousNumber + " " + operator;
+            }
+        })
+    }
 } operation();
