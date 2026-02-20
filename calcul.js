@@ -6,3 +6,20 @@
 // create function to operate and display result
     // convert stringed numbers to actual numbers
     // perform calculation and return result
+
+let currentNumber = '';
+let previousNumber = '';
+let operator = '';
+
+function operation() {
+    const numbers= document.querySelectorAll('.number');
+
+    for (let i = 0; i < numbers.length; i++) {
+        numbers[i].addEventListener('click', function(e) {
+            let value = e.target.innerHTML;
+            currentNumber += value;
+            document.querySelector('.result').innerHTML = currentNumber;
+        })
+    }
+
+} operation();
