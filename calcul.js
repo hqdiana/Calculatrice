@@ -16,8 +16,10 @@ function operation() {
     const operators = document.querySelectorAll('.operator');
     const calculation = document.querySelector('.equal');
     const negate = document.querySelector('.negate');
+    const reset = document.querySelector('.reset');
 
     let justCalculated = false;
+
 // loop through each number button to check witch one is clicked, and retrieve it's value
     for (let i = 0; i < numbers.length; i++) {
         numbers[i].addEventListener('click', function(e) {
@@ -103,6 +105,17 @@ function operation() {
         }
 
     })
-} operation();
+
+// listener on AC button
+    reset.addEventListener('click', function() {
+        currentNumber = '';
+        previousNumber = '';
+        operator = '';
+        justCalculated = false;
+        document.querySelector('.result').innerHTML = '0';
+    })
+
+} 
+operation();
 
 
