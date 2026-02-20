@@ -38,4 +38,31 @@ function operation() {
             }
         })
     }
+
+    const calculation = document.querySelector('.equal');
+
+    calculation.addEventListener('click', function() {
+        if (previousNumber != '' && currentNumber != '' && operator != '') {
+            numericPrevious = Number(previousNumber);
+            numericCurrent = Number(currentNumber);
+
+            if (operator === '+') {
+                currentNumber = numericPrevious + numericCurrent;
+            } else if (operator === '-') {
+                currentNumber = numericPrevious - numericCurrent;
+            } else if (operator === 'x') {
+                currentNumber = numericPrevious * numericCurrent;
+            } else if (operator === '÷') {
+                currentNumber = numericPrevious / numericCurrent;
+            } else if (operator === '%') {
+                currentNumber = numericPrevious % numericCurrent;
+            }
+
+            previousNumber = '';
+            operator = '';
+
+            document.querySelector('.result').innerHTML = currentNumber;
+        }
+
+    })
 } operation();
