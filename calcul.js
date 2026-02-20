@@ -13,21 +13,45 @@ let operator = '';
 
 function operation() {
     const numbers= document.querySelectorAll('.number');
+    const operators = document.querySelectorAll('.operator');
+    const calculation = document.querySelector('.equal');
+    const negate = document.querySelector('.negate');
 
+    let justCalculated = false;
+// loop through each number button to check witch one is clicked, and retrieve it's value
     for (let i = 0; i < numbers.length; i++) {
         numbers[i].addEventListener('click', function(e) {
             let value = e.target.innerHTML;
-            currentNumber += value;
+
+// check if value is '.' or not
+            if (value === '.') {
+                if (justCalculated === true) {
+                    currentNumber = '0.';
+                    justCalculated = false;
+                    document.querySelector('.result').innerHTML = currentNumber;
+                }
+                if (currentNumber.includes('.')) 
+                    return;
+                if (currentNumber === '') {
+                    currentNumber += '0.';
+                }
+            }                     
+// check if a calculation has been done or not 
+            if (justCalculated === true) {
+                currentNumber = value;
+                justCalculated = false;
+            } else {
+                currentNumber += value;
+            }
             document.querySelector('.result').innerHTML = currentNumber;
         })
     }
-    const operators = document.querySelectorAll('.operator');
-
+// loop through each operator button to see which one has been clicked
     for (let i = 0; i < operators.length; i++) {
         operators[i].addEventListener('click', function(e) {
             let value = e.target.innerHTML;
-
-            if (currentNumber === '' && operator != null) {
+// check if an operator has already been selected or not
+            if (currentNumber === '' && operator != '') {
                 operator = value;
                 document.querySelector('.result').innerHTML = previousNumber + " " + operator;
             } else {
@@ -39,12 +63,13 @@ function operation() {
         })
     }
 
-    const calculation = document.querySelector('.equal');
 
+
+// listener on = button to convert strings to number and effectuate calculation
     calculation.addEventListener('click', function() {
         if (previousNumber != '' && currentNumber != '' && operator != '') {
-            numericPrevious = Number(previousNumber);
-            numericCurrent = Number(currentNumber);
+            let numericPrevious = Number(previousNumber);
+            let numericCurrent = Number(currentNumber);
 
             if (operator === '+') {
                 currentNumber = numericPrevious + numericCurrent;
@@ -60,9 +85,12 @@ function operation() {
 
             previousNumber = '';
             operator = '';
+            justCalculated = true;
 
             document.querySelector('.result').innerHTML = currentNumber;
         }
 
     })
 } operation();
+
+
