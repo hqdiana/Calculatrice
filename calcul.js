@@ -42,6 +42,7 @@ function operation() {
             if (justCalculated === true) {
                 currentNumber = value;
                 justCalculated = false;
+                document.querySelector('.result').style.color = 'rgb(158, 179, 140)'
             } else {
                 currentNumber += value;
             }
@@ -102,6 +103,7 @@ function operation() {
             justCalculated = true;
 
             document.querySelector('.result').innerHTML = currentNumber;
+            document.querySelector('.result').style.color = 'orange';
         }
 
     })
@@ -113,6 +115,7 @@ function operation() {
         operator = '';
         justCalculated = false;
         document.querySelector('.result').innerHTML = '0';
+        document.querySelector('.result').style.color = 'rgb(158, 179, 140)'
     })
 
 } 
